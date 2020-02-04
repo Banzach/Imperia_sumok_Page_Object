@@ -27,7 +27,7 @@ class LoginPage(BasePage):
     def guest_can_go_to_register_page(self):
         reg_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
         reg_button.click()
-        assert self.browser.current_url == "https://test.imperiasumok.ru/reg/", "Current url not a /reg/ page"
+        assert self.browser.current_url == "https://www.imperiasumok.ru/reg/", "Current url not a /reg/ page"
 
     
     

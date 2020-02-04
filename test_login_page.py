@@ -3,7 +3,7 @@ from pages.base_page import BasePage
 from pages.login_page import LoginPage
 import time
 
-link = "https://test.imperiasumok.ru/auth/"
+link = "https://www.imperiasumok.ru/auth/"
 
 def test_user_can_log_in(browser):
     login_page = LoginPage(browser, link)

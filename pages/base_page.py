@@ -2,7 +2,9 @@ from pages.locators import MainPageLocators
 from pages.locators import BasePageLocators
 from pages.locators import LoginPageLocators 
 from selenium.webdriver.common.by import By
+from selenium import webdriver
 import time
+from selenium.common.exceptions import NoSuchElementException
 
 class BasePage():
 
@@ -25,7 +27,7 @@ class BasePage():
         login_page_button.click()
     
     def is_it_login_page(self):
-        assert self.browser.current_url == "https://test.imperiasumok.ru/auth/", "Not the auth page"
+        assert self.browser.current_url == "https://www.imperiasumok.ru/auth/", "Not the auth page"
 
     def is_element_present(self, how, what):
         try:
