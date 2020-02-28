@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class BasePageLocators():
+    BODY = (By.TAG_NAME, "body")
     LOGOUT_BUTTON = (By.CSS_SELECTOR, ".middle a #Layer_1")
     USER_NAME_ON_HEADER = (By.CSS_SELECTOR, ".middle [href = '/personal/'] span")
     SEARCH_BAR = (By.CSS_SELECTOR, ".middle [name='q']")
@@ -21,6 +22,7 @@ class LoginPageLocators():
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, ".box-auth-reg a[href = '/reg/']")
 
 class SectionPageLocators():
+    FIRST_PRODUCT_CART = (By.CSS_SELECTOR, ".row .col-xs-6.col-sm-6.col-md-4.col-lg-3:nth-child(1) .box-snippet-full.product_item")
     ADD_TO_FAVORITE_FIRST_PRODUCT = (By.CSS_SELECTOR, ".row .col-xs-6.col-sm-6.col-md-4.col-lg-3:nth-child(1) .fa.fa-heart-o")
     ADD_TO_CART_FIRST_PRODUCT = (By.CSS_SELECTOR, ".row .col-xs-6.col-sm-6.col-md-4.col-lg-3:nth-child(1) .to_basket")
     SMART_FILTER = (By.CSS_SELECTOR, ".col-sm-4 .filter")
@@ -30,3 +32,4 @@ class CartPageLocators():
     DISCOUNT_CARD_FIELD = (By.CSS_SELECTOR, "[name='barcode']")
     APPLY_DISCOUNT_CARD = (By.CSS_SELECTOR, "button.btn.btn-gray")
     NEXT_STEP = (By.CSS_SELECTOR, "a.btn.btn-blue.pull-right")
+    CONTACT_DATA_NAME = (By.CSS_SELECTOR, "[name='name']")

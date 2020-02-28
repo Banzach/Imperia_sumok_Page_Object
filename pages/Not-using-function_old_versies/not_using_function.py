@@ -1,20 +1,4 @@
-from pages.base_page import BasePage
-from pages.locators import BasePageLocators
-from pages.locators import SectionPageLocators
-from pages.locators import CartPageLocators
 
-class SectionPage(BasePage):
-
-    def guest_can_add_goods_to_cart_and_favorite(self):
-        first_product_add_to_cart = self.is_element_visible_and_click(SectionPageLocators.ADD_TO_CART_FIRST_PRODUCT)
-        check_cart_value = self.browser.find_element(*BasePageLocators.CART_ICON)
-        assert int(check_cart_value.text) == 1, 'Quantity in cart is not = 1'
-
-    
-    def guest_can_go_to_cart_page_from_section_page(self):
-        check_cart_value = self.is_element_visible_and_click(BasePageLocators.CART_ICON)
-        print(self.browser.current_url)
-        assert self.browser.current_url == "https://www.imperiasumok.ru/personal/cart/", "Current url not a /cart/ page"
         
 #    def guest_can_choose_pickup_point(self):
 #        scroll_page_to(CartPageLocators.FIRST_PICKUP_POINT)
@@ -38,3 +22,12 @@ class SectionPage(BasePage):
 
 
 
+
+    #def find_element(self, locator, time=10):
+    #    return WebDriverWait(self.browser,time).until(EC.element_to_be_clickable(locator))        # - Вместо time.sleep
+        
+    #element = WebDriverWait(driver, 20).until(
+    #EC.presence_of_element_located((By.ID, "myElement")))    
+    
+    #def wait_until_element_clickable(self):
+    #    return WebDriverWait(self.browser, 100).until(EC.element_to_be_clickable((*CartPageLocators.DISCOUNT_CARD_FIELD)))
