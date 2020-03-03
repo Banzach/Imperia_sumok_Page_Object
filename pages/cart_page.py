@@ -1,7 +1,6 @@
 from pages.locators import BasePageLocators
 from pages.locators import CartPageLocators
 from pages.base_page import BasePage
-import time
 
 class CartPage(BasePage):
   
@@ -19,4 +18,11 @@ class CartPage(BasePage):
         go_to_next_step.click()
         
     def guest_can_input_contact_data(self):
-        self.input_message(*CartPageLocators.CONTACT_DATA_NAME, "Serega")
+        self.input_message(*CartPageLocators.CONTACT_DATA_NAME, "AutoTest")
+        self.input_message(*CartPageLocators.CONTACT_DATA_LASTNAME, "AutoTest")
+        self.input_message(*CartPageLocators.CONTACT_DATA_EMAIL, "ImperTest25@gmail.com")
+        self.input_message(*CartPageLocators.CONTACT_DATA_MESSAGE, "СъешьЕщеЭтихМягкихФранцузскихБулок,ДаВыпейЧаю")
+       # Проверяем, установлена ли максимальная длина комментария
+        commentary_length = self.get_element_attribute(*CartPageLocators.CONTACT_DATA_MESSAGE,"maxlength")
+        assert int(commentary_length) == 200, "Maxlength of commentary != 200"
+        
