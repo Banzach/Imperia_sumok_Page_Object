@@ -7,8 +7,8 @@ class LoginPage(BasePage):
     def guest_can_login(self):
         assert self.is_element_present(*LoginPageLocators.USER_LOGIN), 'Field for Login not present'
         assert self.is_element_present(*LoginPageLocators.USER_PASSWORD), 'Field for Paswword not present'
-        login_field = self.input_message(*LoginPageLocators.USER_LOGIN, 'ImperTest25@gmail.com')
-        password_field = self.input_message(*LoginPageLocators.USER_PASSWORD, 'ImperTest25')
+        login_field = self.input_message(*LoginPageLocators.USER_LOGIN, 'IMP')
+        password_field = self.input_message(*LoginPageLocators.USER_PASSWORD, 'IMP')
    
         self.is_element_visible_and_click(LoginPageLocators.LOG_IN_BUTTON)
         user_name_on_header = self.browser.find_element(*BasePageLocators.USER_NAME_ON_HEADER)
